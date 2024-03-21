@@ -1,6 +1,6 @@
 import sys
 
-while True == True:
+while True:
     print("What calculation would you like?")
     print("1. Addition")
     print("2. subtraction")
@@ -15,8 +15,9 @@ while True == True:
         numbers.sort()
         print(numbers)
     elif unit == "5":
+
         def inches_to_cm(inches):
-             return inches * 2.54
+            return inches * 2.54
 
         def cm_to_inches(cm):
             return cm / 2.54
@@ -33,10 +34,12 @@ while True == True:
             print("2. Centimeters to Inches")
             print("3. Feet to Meters")
             print("4. Meters to Feet")
+            print("5. Celsius to Fahrenheit")
+
         print(main())
-    
+
         choice = int(input("Enter your conversion metrics: "))
-    
+
         if choice == 1:
             inches = float(input("Enter length in inches: "))
             cm = inches_to_cm(inches)
@@ -53,29 +56,34 @@ while True == True:
             meters = float(input("Enter length in meters: "))
             feet = meters_to_feet(meters)
             print(f"{meters} meters is equal to {feet:.2f} feet")
+        elif choice == 5:
+            celsius = float(input("Enter temperature in Celsius: "))
+            fahrenheit = (celsius * 9 / 5) + 32
+            print(
+                f"{celsius} degrees Celsius is equal to {fahrenheit:.2f} degrees Fahrenheit"
+            )
         else:
             print("Invalid choice")
-
 
     else:
         number1 = float(input("What's the first number you want to calculate?"))
         number2 = float(input("What's the second number you want to calculate?"))
         answer = 0
         if unit == "1":
-            answer = number1+number2
+            answer = number1 + number2
             print(answer)
         elif unit == "2":
-            answer = number2-number1
+            answer = number2 - number1
             print(answer)
         elif unit == "3":
-            answer = number1/number2
+            answer = number1 / number2
             print(answer)
         elif unit == "4":
-            answer = number1*number2
+            answer = number1 * number2
             print(answer)
         else:
             print("Error: input not recognised")
-    
+
     print("Would you like to calculate again? (yes/no)")
     calculate = input()
     if calculate == "no":
